@@ -12,15 +12,24 @@ public partial class Problems
         nums2 = new[] {3, 4};
         Console.WriteLine($"Example 2: {MedianOfTwoSortedArrays(nums1, nums2)}");
     }
-
-    //Slow.. Could try using a Binary Search algorithm?..
+    
     private static double MedianOfTwoSortedArrays(int[] nums1, int[] nums2)
     {
-        int[] newArr = nums1.Concat(nums2).ToArray();
-        Array.Sort(newArr);
-        bool singleDigitMedian = newArr.Length % 2 != 0;
-        int medianIndex = newArr.Length / 2;
+        int mergedLength = nums1.Length + nums2.Length;
+        int[] newArr = new int[(mergedLength + 1 + (1 - mergedLength % 2)) / 2];
 
-        return singleDigitMedian ? newArr[medianIndex] : (double)(newArr[medianIndex - 1] + newArr[medianIndex]) / 2;
+        int n1 = 0;
+        int n2 = 0;
+        for (int i = 0; i < newArr.Length; i++)
+        {
+            if (n1 >= nums1.Length || n2 >= nums2.Length)
+                newArr[i] = n1 >= nums1.Length ? nums2[n2++] : nums1[n1++];
+            else
+                newArr[i] = nums1[n1] <= nums2[n2] ? nums1[n1++] : nums2[n2++];
+        }
+
+        return mergedLength % 2 != 0
+            ? newArr[newArr.Length - 1]
+            : (double) (newArr[newArr.Length - 2] + newArr[newArr.Length - 1]) / 2;
     }
 }
