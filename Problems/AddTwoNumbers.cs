@@ -1,23 +1,27 @@
 using System.Numerics;
 
-public partial class Problems
+namespace LeetCode.Problems;
+
+public class AddTwoNumbers : ITestable
 {
-    public static void AddTwoNumbersTest()
+    public int GetProblemNum() => 2;
+
+    public void Test()
     {
         //Example 1
         ListNode l1 = arrayToListNode(new[] {2, 4, 3});
         ListNode l2 = arrayToListNode(new[] {5, 6, 4});
-        printListNode(AddTwoNumbers(l1, l2), 1);
+        printListNode(SolveAddTwoNumbers(l1, l2), 1);
         
         //Example 2
         l1 = new ListNode(0);
         l2 = new ListNode(0);
-        printListNode(AddTwoNumbers(l1, l2), 2);
+        printListNode(SolveAddTwoNumbers(l1, l2), 2);
         
         //Example 3
         l1 = arrayToListNode(new[] {9, 9, 9, 9, 9, 9, 9});
         l2 = arrayToListNode(new[] {9, 9, 9, 9});
-        printListNode(AddTwoNumbers(l1, l2), 3);
+        printListNode(SolveAddTwoNumbers(l1, l2), 3);
 
         ListNode arrayToListNode(int[] arr)
         {
@@ -56,8 +60,8 @@ public partial class Problems
              this.next = next;
          }
     }
-    
-    private static ListNode AddTwoNumbers(ListNode l1, ListNode l2)
+
+    private ListNode SolveAddTwoNumbers(ListNode l1, ListNode l2)
     {
         string ListNodeValuesToString(ListNode listNode)
         {

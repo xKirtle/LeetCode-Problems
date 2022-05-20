@@ -1,21 +1,25 @@
-public partial class Problems
+namespace LeetCode.Problems;
+
+public class LongestSubstringWithoutRepeatingCharacters : ITestable
 {
-    public static void LongestSubstringWithoutRepeatingCharactersTest()
+    public int GetProblemNum() => 3;
+
+    public void Test()
     {
         //Example 1
         string str = "abcabcbb";
-        Console.WriteLine($"Example 1: {LongestSubstringWithoutRepeatingCharacters(str)}");
+        Console.WriteLine($"Example 1: {SolveLongestSubstringWithoutRepeatingCharacters(str)}");
         
         //Example 2
         str = "bbbbb";
-        Console.WriteLine($"Example 2: {LongestSubstringWithoutRepeatingCharacters(str)}");  
+        Console.WriteLine($"Example 2: {SolveLongestSubstringWithoutRepeatingCharacters(str)}");  
         
         //Example 3
         str = "pwwkew";
-        Console.WriteLine($"Example 3: {LongestSubstringWithoutRepeatingCharacters(str)}");
+        Console.WriteLine($"Example 3: {SolveLongestSubstringWithoutRepeatingCharacters(str)}");
     }
     
-    private static int LongestSubstringWithoutRepeatingCharacters(string s)
+    private int SolveLongestSubstringWithoutRepeatingCharacters(string s)
     {
         int start = 0;
         int result = 0;

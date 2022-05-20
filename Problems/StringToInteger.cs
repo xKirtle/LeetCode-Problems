@@ -1,33 +1,37 @@
-public partial class Problems
+namespace LeetCode.Problems;
+
+public class StringToInteger : ITestable
 {
-    public static void StringToIntegerTest()
+    public int GetProblemNum() => 8;
+
+    public void Test()
     {
 
-        Console.WriteLine($"{StringToInteger(" ")}");
+        Console.WriteLine($"{SolveStringToInteger(" ")}");
         //Example 1 -> 42
         string s = "42";
-        Console.WriteLine($"Example 1: {StringToInteger(s)}");
+        Console.WriteLine($"Example 1: {SolveStringToInteger(s)}");
         
         //Example 2 -> -42
         s = "   -42";
-        Console.WriteLine($"Example 2: {StringToInteger(s)}");
+        Console.WriteLine($"Example 2: {SolveStringToInteger(s)}");
         
         //Example 3 -> 4193
         s = "4193 with words";
-        Console.WriteLine($"Example 3: {StringToInteger(s)}");
+        Console.WriteLine($"Example 3: {SolveStringToInteger(s)}");
         
         //My own test cases
         
         //Example 4 -> 32
         s = "000032";
-        Console.WriteLine($"Example 4: {StringToInteger(s)}");
+        Console.WriteLine($"Example 4: {SolveStringToInteger(s)}");
         
         //Example 5 -> 7684
         s = "words before 7684";
-        Console.WriteLine($"Example 5: {StringToInteger(s)}");
+        Console.WriteLine($"Example 5: {SolveStringToInteger(s)}");
     }
 
-    private static int StringToInteger(string s)
+    private int SolveStringToInteger(string s)
     {
         int sign = 1, Base = 0, i = 0;
 

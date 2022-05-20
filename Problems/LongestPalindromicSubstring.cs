@@ -1,17 +1,21 @@
-public partial class Problems
+namespace LeetCode.Problems;
+
+public class LongestPalindromicSubstring : ITestable
 {
-    public static void LongestPalindromicSubstringTest()
+    public int GetProblemNum() => 5;
+    
+    public void Test()
     {
         //Example 1
         string s = "babad";
-        Console.WriteLine(LongestPalindromicSubstring(s));
+        Console.WriteLine(SolveLongestPalindromicSubstring(s));
         
         //Example 2
         s = "cbbd";
-        Console.WriteLine(LongestPalindromicSubstring(s));
+        Console.WriteLine(SolveLongestPalindromicSubstring(s));
     }
 
-    private static string LongestPalindromicSubstring(string s)
+    private string SolveLongestPalindromicSubstring(string s)
     {
         if (s.Length < 2)
             return s.Length == 1 ? s[0].ToString() : "";

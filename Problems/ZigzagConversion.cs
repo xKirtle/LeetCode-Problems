@@ -1,21 +1,25 @@
-public partial class Problems
+namespace LeetCode.Problems;
+
+public class ZigzagConversion : ITestable
 {
-    public static void ZigzagConversionTest()
+    public int GetProblemNum() => 6;
+
+    public void Test()
     {
         //Example 1
         string s = "PAYPALISHIRING";
         int numRows = 3;
-        Console.WriteLine($"Example 1: {ZigzagConversion(s, numRows)}");
+        Console.WriteLine($"Example 1: {SolveZigzagConversion(s, numRows)}");
         
         //Example 2
         s = "PAYPALISHIRING";
         numRows = 4;
-        Console.WriteLine($"Example 2: {ZigzagConversion(s, numRows)}");
+        Console.WriteLine($"Example 2: {SolveZigzagConversion(s, numRows)}");
         
         //Example 3
         s = "A";
         numRows = 1;
-        Console.WriteLine($"Example 3: {ZigzagConversion(s, numRows)}");
+        Console.WriteLine($"Example 3: {SolveZigzagConversion(s, numRows)}");
         
         //column * 2*(numRows-1) + row -> vertical pattern
         //column * 2*(numRows-1) - row -> diagonal pattern
@@ -36,7 +40,7 @@ public partial class Problems
         */
     }
 
-    private static string ZigzagConversion(string s, int numRows)
+    private string SolveZigzagConversion(string s, int numRows)
     {
         if (s.Length == 1 || numRows == 1 || s.Length <= numRows)
             return s;

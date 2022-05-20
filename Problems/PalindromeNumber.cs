@@ -1,21 +1,25 @@
-public partial class Problems
+namespace LeetCode.Problems;
+
+public class PalindromeNumber : ITestable
 {
-    public static void PalindromeNumberTest()
+    public int GetProblemNum() => 9;
+
+    public void Test()
     {
         //Example 1
         int x = 121;
-        Console.WriteLine($"Example 1: {PalindromeNumber(x)}");
+        Console.WriteLine($"Example 1: {SolvePalindromeNumber(x)}");
         
         //Example 2
         x = -121;
-        Console.WriteLine($"Example 2: {PalindromeNumber(x)}");
+        Console.WriteLine($"Example 2: {SolvePalindromeNumber(x)}");
         
         //Example 3
         x = 10;
-        Console.WriteLine($"Example 3: {PalindromeNumber(x)}");
+        Console.WriteLine($"Example 3: {SolvePalindromeNumber(x)}");
     }
 
-    private static bool PalindromeNumber(int x)
+    private bool SolvePalindromeNumber(int x)
     {
         string str = x.ToString();
         int middle1 = (int)((double)str.Length / 2 - (str.Length % 2 != 0 ? 0 : 1));
