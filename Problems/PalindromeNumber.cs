@@ -3,9 +3,12 @@ namespace LeetCode.Problems;
 public class PalindromeNumber : ITestable
 {
     public int GetProblemNum() => 9;
+    public Stats GetProblemStats() => new Stats("9. Palindrome Number", Difficulty.Easy, 60, 28.7);
 
     public void Test()
     {
+        Console.WriteLine(GetProblemStats().ToString());
+        
         //Example 1
         int x = 121;
         Console.WriteLine($"Example 1: {SolvePalindromeNumber(x)}");

@@ -3,9 +3,12 @@ namespace LeetCode.Problems;
 public class LongestPalindromicSubstring : ITestable
 {
     public int GetProblemNum() => 5;
+    public Stats GetProblemStats() => new Stats("5. Longest Palindromic Substring", Difficulty.Medium, 100, 36.6);
     
     public void Test()
     {
+        Console.WriteLine(GetProblemStats().ToString());
+        
         //Example 1
         string s = "babad";
         Console.WriteLine(SolveLongestPalindromicSubstring(s));

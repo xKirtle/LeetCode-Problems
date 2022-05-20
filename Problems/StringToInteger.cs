@@ -3,11 +3,12 @@ namespace LeetCode.Problems;
 public class StringToInteger : ITestable
 {
     public int GetProblemNum() => 8;
+    public Stats GetProblemStats() => new Stats("8. String To Integer (atoi)", Difficulty.Medium, 124, 36.6);
 
     public void Test()
     {
-
-        Console.WriteLine($"{SolveStringToInteger(" ")}");
+        Console.WriteLine(GetProblemStats().ToString());
+        
         //Example 1
         string s = "42";
         Console.WriteLine($"Example 1: {SolveStringToInteger(s)}");

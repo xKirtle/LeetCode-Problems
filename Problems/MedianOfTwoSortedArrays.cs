@@ -3,9 +3,12 @@ namespace LeetCode.Problems;
 public class MedianOfTwoSortedArrays : ITestable
 {
     public int GetProblemNum() => 4;
+    public Stats GetProblemStats() => new Stats("4. Median Of Two Sorted Arrays", Difficulty.Hard, 124, 39.8);
     
     public void Test()
     {
+        Console.WriteLine(GetProblemStats().ToString());
+        
         //Example 1
         int[] nums1 = new[] {1, 3};
         int[] nums2 = new[] {2};

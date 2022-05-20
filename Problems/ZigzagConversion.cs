@@ -3,9 +3,12 @@ namespace LeetCode.Problems;
 public class ZigzagConversion : ITestable
 {
     public int GetProblemNum() => 6;
+    public Stats GetProblemStats() => new Stats("6. Zigzag Conversion", Difficulty.Medium, 116, 38.1);
 
     public void Test()
     {
+        Console.WriteLine(GetProblemStats().ToString());
+        
         //Example 1
         string s = "PAYPALISHIRING";
         int numRows = 3;

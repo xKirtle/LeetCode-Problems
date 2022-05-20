@@ -4,8 +4,13 @@ public class LongestSubstringWithoutRepeatingCharacters : ITestable
 {
     public int GetProblemNum() => 3;
 
+    public Stats GetProblemStats() =>
+        new Stats("3. Longest Substring Without Repeating Characters", Difficulty.Medium, 78, 37);
+    
     public void Test()
     {
+        Console.WriteLine(GetProblemStats().ToString());
+        
         //Example 1
         string str = "abcabcbb";
         Console.WriteLine($"Example 1: {SolveLongestSubstringWithoutRepeatingCharacters(str)}");

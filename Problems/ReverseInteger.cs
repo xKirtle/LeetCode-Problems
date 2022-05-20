@@ -3,9 +3,12 @@ namespace LeetCode.Problems;
 public class ReverseInteger : ITestable
 {
     public int GetProblemNum() => 7;
+    public Stats GetProblemStats() => new Stats("7. Reverse Integer", Difficulty.Medium, 27, 25.6);
 
     public void Test()
     {
+        Console.WriteLine(GetProblemStats().ToString());
+        
         //Example 1
         int x = 123;
         Console.WriteLine($"Example 1: {SolveReverseInteger(x)}");

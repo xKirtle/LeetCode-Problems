@@ -5,9 +5,12 @@ namespace LeetCode.Problems;
 public class AddTwoNumbers : ITestable
 {
     public int GetProblemNum() => 2;
+    public Stats GetProblemStats() => new Stats("2. Add Two Numbers", Difficulty.Medium, 147, 39.8);
 
     public void Test()
     {
+        Console.WriteLine(GetProblemStats().ToString());
+
         //Example 1
         ListNode l1 = arrayToListNode(new[] {2, 4, 3});
         ListNode l2 = arrayToListNode(new[] {5, 6, 4});
@@ -49,7 +52,7 @@ public class AddTwoNumbers : ITestable
             Console.WriteLine($"Example {exampleNum}: [{String.Join(", ", result)}]");
         }
     }
-    
+
     private class ListNode 
     {
          public int val;
