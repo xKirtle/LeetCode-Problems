@@ -8,25 +8,23 @@ public class StringToInteger : ITestable
     {
 
         Console.WriteLine($"{SolveStringToInteger(" ")}");
-        //Example 1 -> 42
+        //Example 1
         string s = "42";
         Console.WriteLine($"Example 1: {SolveStringToInteger(s)}");
         
-        //Example 2 -> -42
+        //Example 2
         s = "   -42";
         Console.WriteLine($"Example 2: {SolveStringToInteger(s)}");
         
-        //Example 3 -> 4193
+        //Example 3
         s = "4193 with words";
         Console.WriteLine($"Example 3: {SolveStringToInteger(s)}");
-        
-        //My own test cases
-        
-        //Example 4 -> 32
+
+        //Example 4
         s = "000032";
         Console.WriteLine($"Example 4: {SolveStringToInteger(s)}");
         
-        //Example 5 -> 7684
+        //Example 5
         s = "words before 7684";
         Console.WriteLine($"Example 5: {SolveStringToInteger(s)}");
     }
