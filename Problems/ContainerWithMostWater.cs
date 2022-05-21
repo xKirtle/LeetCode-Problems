@@ -21,7 +21,7 @@ public class ContainerWithMostWater : ITestable
         
         //Example 4
         height = new[] {1, 8, 6, 2, 5, 4, 8, 25, 7};
-        Console.WriteLine(SolveContainerWithMostWater(height));
+        Console.WriteLine($"Example 4: {SolveContainerWithMostWater(height)}");
     }
 
     private int SolveContainerWithMostWater(int[] height)
