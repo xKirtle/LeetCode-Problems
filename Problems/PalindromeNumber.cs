@@ -1,11 +1,10 @@
 namespace LeetCode.Problems;
 
-public class PalindromeNumber : ITestable
+public class PalindromeNumber : BaseProblem
 {
-    public int GetProblemNum() => 9;
-    public Stats GetProblemStats() => new Stats("9. Palindrome Number", Difficulty.Easy, 60, 28.7);
-
-    public void Test()
+    public PalindromeNumber() => SetProblemStats(9, "Palindrome Number", Difficulty.Easy);
+    
+    protected override void ActualExecuteTest()
     {
         //Example 1
         int x = 121;

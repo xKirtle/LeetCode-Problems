@@ -1,11 +1,10 @@
 namespace LeetCode.Problems;
 
-public class ReverseInteger : ITestable
+public class ReverseInteger : BaseProblem
 {
-    public int GetProblemNum() => 7;
-    public Stats GetProblemStats() => new Stats("7. Reverse Integer", Difficulty.Medium, 27, 25.6);
-
-    public void Test()
+    public ReverseInteger() => SetProblemStats(7, "Reverse Integer", Difficulty.Medium);
+    
+    protected override void ActualExecuteTest()
     {
         //Example 1
         int x = 123;

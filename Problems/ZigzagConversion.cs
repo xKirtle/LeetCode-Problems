@@ -1,11 +1,10 @@
 namespace LeetCode.Problems;
 
-public class ZigzagConversion : ITestable
+public class ZigzagConversion : BaseProblem
 {
-    public int GetProblemNum() => 6;
-    public Stats GetProblemStats() => new Stats("6. Zigzag Conversion", Difficulty.Medium, 116, 38.1);
-
-    public void Test()
+    public ZigzagConversion() => SetProblemStats(6, "Zigzag Conversion", Difficulty.Medium);
+    
+    protected override void ActualExecuteTest()
     {
         //Example 1
         string s = "PAYPALISHIRING";

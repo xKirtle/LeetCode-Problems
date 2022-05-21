@@ -1,11 +1,10 @@
 namespace LeetCode.Problems;
 
-public class MedianOfTwoSortedArrays : ITestable
+public class MedianOfTwoSortedArrays : BaseProblem
 {
-    public int GetProblemNum() => 4;
-    public Stats GetProblemStats() => new Stats("4. Median Of Two Sorted Arrays", Difficulty.Hard, 124, 39.8);
+    public MedianOfTwoSortedArrays() => SetProblemStats(4, "Median Of Two Sorted Arrays", Difficulty.Hard);
     
-    public void Test()
+    protected override void ActualExecuteTest()
     {
         //Example 1
         int[] nums1 = new[] {1, 3};

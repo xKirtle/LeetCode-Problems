@@ -1,11 +1,10 @@
 namespace LeetCode.Problems;
 
-public class ContainerWithMostWater : ITestable
+public class ContainerWithMostWater : BaseProblem
 {
-    public int GetProblemNum() => 11;
-    public Stats GetProblemStats() => new Stats("11. Container With Most Water", Difficulty.Medium, 224, 45.3);
+    public ContainerWithMostWater() => SetProblemStats(11, "Container With Most Water", Difficulty.Medium);
     
-    public void Test()
+    protected override void ActualExecuteTest()
     {
         //Example 1
         int[] height = new[] {1, 8, 6, 2, 5, 4, 8, 3, 7};

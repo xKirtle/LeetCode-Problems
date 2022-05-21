@@ -1,13 +1,10 @@
 namespace LeetCode.Problems;
 
-public class LongestSubstringWithoutRepeatingCharacters : ITestable
+public class LongestSubstringWithoutRepeatingCharacters : BaseProblem
 {
-    public int GetProblemNum() => 3;
-
-    public Stats GetProblemStats() =>
-        new Stats("3. Longest Substring Without Repeating Characters", Difficulty.Medium, 78, 37);
+    public LongestSubstringWithoutRepeatingCharacters() => SetProblemStats(3, "Longest Substring Without Repeating Characters", Difficulty.Medium);
     
-    public void Test()
+    protected override void ActualExecuteTest()
     {
         //Example 1
         string str = "abcabcbb";

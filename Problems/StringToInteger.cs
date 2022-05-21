@@ -1,11 +1,10 @@
 namespace LeetCode.Problems;
 
-public class StringToInteger : ITestable
+public class StringToInteger : BaseProblem
 {
-    public int GetProblemNum() => 8;
-    public Stats GetProblemStats() => new Stats("8. String To Integer (atoi)", Difficulty.Medium, 124, 36.6);
-
-    public void Test()
+    public StringToInteger() => SetProblemStats(8, "String To Integer (atoi)", Difficulty.Medium);
+    
+    protected override void ActualExecuteTest()
     {
         //Example 1
         string s = "42";

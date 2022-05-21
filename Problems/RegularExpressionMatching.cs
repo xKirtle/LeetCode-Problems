@@ -1,11 +1,10 @@
 namespace LeetCode.Problems;
 
-public class RegularExpressionMatching : ITestable
+public class RegularExpressionMatching : BaseProblem
 {
-    public int GetProblemNum() => 10;
-    public Stats GetProblemStats() => new Stats("10. Regular Expression Matching", Difficulty.Hard, -1, -1);
-
-    public void Test()
+    public RegularExpressionMatching() => SetProblemStats(10, "Regular Expression Matching", Difficulty.Hard);
+    
+    protected override void ActualExecuteTest()
     {
         throw new NotImplementedException();
     }

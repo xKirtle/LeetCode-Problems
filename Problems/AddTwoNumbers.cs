@@ -2,12 +2,11 @@ using System.Numerics;
 
 namespace LeetCode.Problems;
 
-public class AddTwoNumbers : ITestable
+public class AddTwoNumbers : BaseProblem
 {
-    public int GetProblemNum() => 2;
-    public Stats GetProblemStats() => new Stats("2. Add Two Numbers", Difficulty.Medium, 147, 39.8);
+    public AddTwoNumbers() => SetProblemStats(2, "Add Two Numbers", Difficulty.Medium);
 
-    public void Test()
+    protected override void ActualExecuteTest()
     {
         //Example 1
         ListNode l1 = arrayToListNode(new[] {2, 4, 3});

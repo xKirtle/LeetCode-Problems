@@ -1,11 +1,10 @@
 namespace LeetCode.Problems;
 
-public class LongestPalindromicSubstring : ITestable
+public class LongestPalindromicSubstring : BaseProblem
 {
-    public int GetProblemNum() => 5;
-    public Stats GetProblemStats() => new Stats("5. Longest Palindromic Substring", Difficulty.Medium, 100, 36.6);
+    public LongestPalindromicSubstring() => SetProblemStats(5, "Longest Palindromic Substring", Difficulty.Medium);
     
-    public void Test()
+    protected override void ActualExecuteTest()
     {
         //Example 1
         string s = "babad";
