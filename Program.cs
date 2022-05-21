@@ -4,4 +4,4 @@
 instances.Sort((x, y) => x.GetProblemNum() - y.GetProblemNum());
 
 int problemNum = 1;
-instances[problemNum-1].ExecuteTest();
+instances[problemNum].ExecuteTest();
