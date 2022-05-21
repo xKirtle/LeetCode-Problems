@@ -7,8 +7,6 @@ public class MedianOfTwoSortedArrays : ITestable
     
     public void Test()
     {
-        Console.WriteLine(GetProblemStats().ToString());
-        
         //Example 1
         int[] nums1 = new[] {1, 3};
         int[] nums2 = new[] {2};

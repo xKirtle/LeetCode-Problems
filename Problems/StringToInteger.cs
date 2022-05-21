@@ -7,8 +7,6 @@ public class StringToInteger : ITestable
 
     public void Test()
     {
-        Console.WriteLine(GetProblemStats().ToString());
-        
         //Example 1
         string s = "42";
         Console.WriteLine($"Example 1: {SolveStringToInteger(s)}");

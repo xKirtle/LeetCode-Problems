@@ -9,8 +9,6 @@ public class AddTwoNumbers : ITestable
 
     public void Test()
     {
-        Console.WriteLine(GetProblemStats().ToString());
-
         //Example 1
         ListNode l1 = arrayToListNode(new[] {2, 4, 3});
         ListNode l2 = arrayToListNode(new[] {5, 6, 4});

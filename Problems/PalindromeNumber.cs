@@ -7,8 +7,6 @@ public class PalindromeNumber : ITestable
 
     public void Test()
     {
-        Console.WriteLine(GetProblemStats().ToString());
-        
         //Example 1
         int x = 121;
         Console.WriteLine($"Example 1: {SolvePalindromeNumber(x)}");

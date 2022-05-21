@@ -7,8 +7,6 @@ public class RegularExpressionMatching : ITestable
 
     public void Test()
     {
-        Console.WriteLine(GetProblemStats().ToString());
-        
         throw new NotImplementedException();
     }
 }

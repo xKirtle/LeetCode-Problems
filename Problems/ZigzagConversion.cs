@@ -7,8 +7,6 @@ public class ZigzagConversion : ITestable
 
     public void Test()
     {
-        Console.WriteLine(GetProblemStats().ToString());
-        
         //Example 1
         string s = "PAYPALISHIRING";
         int numRows = 3;

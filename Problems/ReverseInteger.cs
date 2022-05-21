@@ -7,8 +7,6 @@ public class ReverseInteger : ITestable
 
     public void Test()
     {
-        Console.WriteLine(GetProblemStats().ToString());
-        
         //Example 1
         int x = 123;
         Console.WriteLine($"Example 1: {SolveReverseInteger(x)}");

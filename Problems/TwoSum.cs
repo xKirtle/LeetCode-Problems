@@ -7,8 +7,6 @@ public class TwoSum : ITestable
     
     public void Test()
     {
-        Console.WriteLine(GetProblemStats().ToString());
-        
         //Example 1
         int[] example1 = SolveTwoSum(new[] {2, 7, 11, 15}, 9);
         Console.WriteLine($"Example 1: [{example1[0]}, {example1[1]}]");

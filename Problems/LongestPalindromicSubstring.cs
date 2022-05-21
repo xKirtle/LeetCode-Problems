@@ -7,8 +7,6 @@ public class LongestPalindromicSubstring : ITestable
     
     public void Test()
     {
-        Console.WriteLine(GetProblemStats().ToString());
-        
         //Example 1
         string s = "babad";
         Console.WriteLine(SolveLongestPalindromicSubstring(s));
