@@ -3,23 +3,23 @@ namespace LeetCode.Problems;
 public class ContainerWithMostWater : ITestable
 {
     public int GetProblemNum() => 11;
-    public Stats GetProblemStats() => new Stats("11. Container With Most Water", Difficulty.Medium, -1, -1);
+    public Stats GetProblemStats() => new Stats("11. Container With Most Water", Difficulty.Medium, 224, 45.3);
     
     public void Test()
     {
-        //Example 1 -> 49
+        //Example 1
         int[] height = new[] {1, 8, 6, 2, 5, 4, 8, 3, 7};
-        // Console.WriteLine($"Example 1: {SolveContainerWithMostWater(height)}");
+        Console.WriteLine($"Example 1: {SolveContainerWithMostWater(height)}");
         
-        //Example 2 -> 1
+        //Example 2
         height = new[] {1, 1};
-        // Console.WriteLine($"Example 2: {SolveContainerWithMostWater(height)}");
+        Console.WriteLine($"Example 2: {SolveContainerWithMostWater(height)}");
         
-        //Example 3 -> 4
+        //Example 3
         height = new[] {1, 2, 4, 3};
-        // Console.WriteLine($"Example 3: {SolveContainerWithMostWater(height)}");
+        Console.WriteLine($"Example 3: {SolveContainerWithMostWater(height)}");
         
-        //Example 4 -> 49
+        //Example 4
         height = new[] {1, 8, 6, 2, 5, 4, 8, 25, 7};
         Console.WriteLine(SolveContainerWithMostWater(height));
     }
@@ -34,7 +34,7 @@ public class ContainerWithMostWater : ITestable
             if (area > maxArea)
                 maxArea = area;
 
-            if (height[start] - height[start + 1] <= height[end] - height[end - 1])
+            if (height[start] <= height[end])
                 start++;
             else
                 end--;
