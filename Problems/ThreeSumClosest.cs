@@ -17,7 +17,7 @@ public class ThreeSumClosest : BaseProblem
         Console.WriteLine($"Example 2: {SolveThreeSumClosest(arr, target)}");
     }
 
-    public int SolveThreeSumClosest(int[] arr, int target)
+    private int SolveThreeSumClosest(int[] arr, int target)
     {
         if (arr.Length == 3)
             return arr[0] + arr[1] + arr[2];
