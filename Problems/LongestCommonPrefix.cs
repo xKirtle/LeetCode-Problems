@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace LeetCode;
+namespace LeetCode.Problems;
 
 public class LongestCommonPrefix : BaseProblem
 {
