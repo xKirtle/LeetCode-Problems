@@ -4,7 +4,7 @@ public class ThreeSumClosest : BaseProblem
 {
     public ThreeSumClosest() => SetProblemStats(16, "Three Sum Closest", Difficulty.Medium);
 
-    override protected void ActualExecuteTest() 
+    protected override void ActualExecuteTest() 
     {
         //Example 1
         int[] arr = new[] { -1, 2, 1, -4 };
