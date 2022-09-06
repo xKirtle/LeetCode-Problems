@@ -48,28 +48,21 @@ public class RemoveNthNodeFromEndList : BaseProblem
     private ListNode SolveRemoveNthNodeFromEndList(ListNode head, int n)
     {
         int count = 0;
-        LinkedList<ListNode> nodes = new LinkedList<ListNode>();
-    
-        ListNode current = head;
-        while (current != null)
+        ListNode[] nodes = new ListNode[n + 1];
+
+        ListNode currentNode = head;
+        while (currentNode != null)
         {
-            count++;
-            nodes.AddLast(current);
-            current = current.Next;
-            
-            if (nodes.Count > n + 1)
-                nodes.RemoveFirst();
+            nodes[count++ % nodes.Length] = currentNode;
+            currentNode = currentNode.Next;
         }
-    
-        if (nodes.Count == 1)
-            return null;
-        else if (count == n) //Remove first element
-            head = nodes.First.Next.Value;
-        else if (n == 1) //Remove last element
-            nodes.Last.Previous.Value.Next = null;
-        else
-            nodes.First.Value.Next = nodes.First.Next.Next.Value;
-    
+
+        if (count == n)
+            return head.Next;
+
+        //Get the node before the target n and "remove" the target n
+        currentNode = nodes[(count - n - 1) % nodes.Length];
+        currentNode.Next = currentNode.Next.Next;
         return head;
     }
 
