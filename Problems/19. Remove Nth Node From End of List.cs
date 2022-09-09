@@ -34,7 +34,7 @@ public class RemoveNthNodeFromEndList : BaseProblem
     }
     
     //LeetCode's implementation
-    public class ListNode
+    private class ListNode
     {
       public int Value;
       public ListNode Next;
