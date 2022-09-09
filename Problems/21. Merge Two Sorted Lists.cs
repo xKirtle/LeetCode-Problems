@@ -2,7 +2,7 @@
 
 public class MergeTwoSortedLists : BaseProblem
 {
-    public MergeTwoSortedLists() => SetProblemStats(21, "Merge Two Sorted Lists", Difficulty.Medium);
+    public MergeTwoSortedLists() => SetProblemStats(21, "Merge Two Sorted Lists", Difficulty.Easy);
 
     protected override void ActualExecuteTest()
     {
