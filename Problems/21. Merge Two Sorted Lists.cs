@@ -1,4 +1,6 @@
-﻿namespace LeetCode.Problems;
+﻿using LeetCode.DataStructures;
+
+namespace LeetCode.Problems;
 
 public class MergeTwoSortedLists : BaseProblem
 {
@@ -9,32 +11,17 @@ public class MergeTwoSortedLists : BaseProblem
         //Example 1
         ListNode list1 = new ListNode(1, new ListNode(2, new ListNode(4, null)));
         ListNode list2 = new ListNode(1, new ListNode(3, new ListNode(4, null)));
-        ListNode node = SolveMergeTwoSortedLists(list1, list2);
-        Console.WriteLine($"Example 1: [{String.Join(", ", OutputListNode(node))}]");
+        Console.WriteLine($"Example 1: {SolveMergeTwoSortedLists(list1, list2).ToString()}");
         
         //Example 2
         list1 = null;
         list2 = null;
-        node = SolveMergeTwoSortedLists(list1, list2);
-        Console.WriteLine($"Example 2: [{String.Join(", ", OutputListNode(node))}]");
+        Console.WriteLine($"Example 2: {SolveMergeTwoSortedLists(list1, list2).ToString()}");
         
         //Example 3
         list1 = null;
         list2 = new ListNode(0, null);
-        node = SolveMergeTwoSortedLists(list1, list2);
-        Console.WriteLine($"Example 3: [{String.Join(", ", OutputListNode(node))}]");
-    }
-    
-    //LeetCode's implementation
-    private class ListNode
-    {
-        public int Value;
-        public ListNode Next;
-        public ListNode(int value = 0, ListNode next = null) 
-        {
-            this.Value = value;
-            this.Next = next;
-        }
+        Console.WriteLine($"Example 3: {SolveMergeTwoSortedLists(list1, list2).ToString()}");
     }
 
     private ListNode SolveMergeTwoSortedLists(ListNode node1, ListNode node2)
@@ -69,21 +56,5 @@ public class MergeTwoSortedLists : BaseProblem
         }
         
         return head;
-    }
-    
-    private IEnumerable<string> OutputListNode(ListNode node)
-    {
-        if (node != null)
-        {
-            do
-            {
-                string value = node.Value.ToString();
-                node = node.Next;
-                yield return value;
-            } while (node?.Next != null);
-
-            if (node != null)
-                yield return node.Value.ToString();
-        }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace LeetCode.Problems;
+﻿using LeetCode.DataStructures;
+
+namespace LeetCode.Problems;
 
 public class MergeKSortedLists : BaseProblem
 {
@@ -13,30 +15,15 @@ public class MergeKSortedLists : BaseProblem
             new ListNode(1, new ListNode(3, new ListNode(4, null))),
             new ListNode(2, new ListNode(6, null))
         };
-        ListNode result = SolveMergeKSortedLists(lists);
-        Console.WriteLine($"Example 1: [{String.Join(", ", OutputListNode(result))}]");
+        Console.WriteLine($"Example 1: {SolveMergeKSortedLists(lists).ToString()}");
         
         //Example 2
         lists = new ListNode[0];
-        result = SolveMergeKSortedLists(lists);
-        Console.WriteLine($"Example 2: [{String.Join(", ", OutputListNode(result))}]");
+        Console.WriteLine($"Example 2: {SolveMergeKSortedLists(lists).ToString()}");
         
         //Example 3
         lists = new ListNode[1];
-        result = SolveMergeKSortedLists(lists);
-        Console.WriteLine($"Example 3: [{String.Join(", ", OutputListNode(result))}]");
-    }
-    
-    //LeetCode's implementation
-    private class ListNode
-    {
-        public int Value;
-        public ListNode Next;
-        public ListNode(int value = 0, ListNode next = null) 
-        {
-            this.Value = value;
-            this.Next = next;
-        }
+        Console.WriteLine($"Example 3: {SolveMergeKSortedLists(lists).ToString()}");
     }
 
     private ListNode SolveMergeKSortedLists(ListNode[] lists)
@@ -59,21 +46,5 @@ public class MergeKSortedLists : BaseProblem
         }
 
         return head.Next; //Because the head's starting value is a dummy value -> simplifies code
-    }
-
-    private IEnumerable<string> OutputListNode(ListNode node)
-    {
-        if (node != null)
-        {
-            do
-            {
-                string value = node.Value.ToString();
-                node = node.Next;
-                yield return value;
-            } while (node?.Next != null);
-
-            if (node != null)
-                yield return node.Value.ToString();
-        }
     }
 }

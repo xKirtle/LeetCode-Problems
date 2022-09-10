@@ -1,4 +1,4 @@
-﻿using System.Collections.ObjectModel;
+﻿using LeetCode.DataStructures;
 
 namespace LeetCode.Problems;
 
@@ -11,38 +11,22 @@ public class RemoveNthNodeFromEndList : BaseProblem
         //Example 1
         ListNode head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5, null)))));
         int index = 2;
-        ListNode node = SolveRemoveNthNodeFromEndList(head, index);
-        Console.WriteLine($"Example 1: [{String.Join(", ", OutputListNode(node))}]");
+        Console.WriteLine($"Example 1: {SolveRemoveNthNodeFromEndList(head, index).ToString()}");
         
         //Example 2
         head = new ListNode(1, null);
         index = 1;
-        node = SolveRemoveNthNodeFromEndList(head, index);
-        Console.WriteLine($"Example 2: [{String.Join(", ", OutputListNode(node))}]");
+        Console.WriteLine($"Example 2: {SolveRemoveNthNodeFromEndList(head, index).ToString()}");
         
         //Example 3
         head = new ListNode(1, new ListNode(2, null));
         index = 1;
-        node = SolveRemoveNthNodeFromEndList(head, index);
-        Console.WriteLine($"Example 3: [{String.Join(", ", OutputListNode(node))}]");
+        Console.WriteLine($"Example 3: {SolveRemoveNthNodeFromEndList(head, index).ToString()}");
         
         //Example 4
         head = new ListNode(1, new ListNode(2, null));
         index = 2;
-        node = SolveRemoveNthNodeFromEndList(head, index);
-        Console.WriteLine($"Example 4: [{String.Join(", ", OutputListNode(node))}]");
-    }
-    
-    //LeetCode's implementation
-    private class ListNode
-    {
-      public int Value;
-      public ListNode Next;
-      public ListNode(int value = 0, ListNode next = null) 
-      {
-          this.Value = value;
-          this.Next = next;
-      }
+        Console.WriteLine($"Example 4: {SolveRemoveNthNodeFromEndList(head, index).ToString()}");
     }
 
     private ListNode SolveRemoveNthNodeFromEndList(ListNode head, int n)
@@ -64,21 +48,5 @@ public class RemoveNthNodeFromEndList : BaseProblem
         currentNode = nodes[(count - n - 1) % nodes.Length];
         currentNode.Next = currentNode.Next.Next;
         return head;
-    }
-
-    private IEnumerable<string> OutputListNode(ListNode node)
-    {
-        if (node != null)
-        {
-            do
-            {
-                string value = node.Value.ToString();
-                node = node.Next;
-                yield return value;
-            } while (node?.Next != null);
-
-            if (node != null)
-                yield return node.Value.ToString();
-        }
     }
 }
