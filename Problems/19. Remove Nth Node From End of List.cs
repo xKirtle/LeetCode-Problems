@@ -11,22 +11,22 @@ public class RemoveNthNodeFromEndList : BaseProblem
         //Example 1
         ListNode head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5, null)))));
         int index = 2;
-        Console.WriteLine($"Example 1: {SolveRemoveNthNodeFromEndList(head, index).ToString()}");
+        Console.WriteLine($"Example 1: [{SolveRemoveNthNodeFromEndList(head, index)?.ToString()}]");
         
         //Example 2
         head = new ListNode(1, null);
         index = 1;
-        Console.WriteLine($"Example 2: {SolveRemoveNthNodeFromEndList(head, index).ToString()}");
+        Console.WriteLine($"Example 2: [{SolveRemoveNthNodeFromEndList(head, index)?.ToString()}]");
         
         //Example 3
         head = new ListNode(1, new ListNode(2, null));
         index = 1;
-        Console.WriteLine($"Example 3: {SolveRemoveNthNodeFromEndList(head, index).ToString()}");
+        Console.WriteLine($"Example 3: [{SolveRemoveNthNodeFromEndList(head, index)?.ToString()}]");
         
         //Example 4
         head = new ListNode(1, new ListNode(2, null));
         index = 2;
-        Console.WriteLine($"Example 4: {SolveRemoveNthNodeFromEndList(head, index).ToString()}");
+        Console.WriteLine($"Example 4: [{SolveRemoveNthNodeFromEndList(head, index)?.ToString()}]");
     }
 
     private ListNode SolveRemoveNthNodeFromEndList(ListNode head, int n)

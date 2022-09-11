@@ -1,4 +1,5 @@
 using System.Numerics;
+using LeetCode.DataStructures;
 
 namespace LeetCode.Problems;
 
@@ -9,56 +10,33 @@ public class AddTwoNumbers : BaseProblem
     protected override void ActualExecuteTest()
     {
         //Example 1
-        ListNode l1 = arrayToListNode(new[] {2, 4, 3});
-        ListNode l2 = arrayToListNode(new[] {5, 6, 4});
-        printListNode(SolveAddTwoNumbers(l1, l2), 1);
+        ListNode l1 = ArrayToListNode(new[] {2, 4, 3});
+        ListNode l2 = ArrayToListNode(new[] {5, 6, 4});
+        Console.WriteLine($"Example 1: {SolveAddTwoNumbers(l1, l2)?.ToString()}");
         
         //Example 2
         l1 = new ListNode(0);
         l2 = new ListNode(0);
-        printListNode(SolveAddTwoNumbers(l1, l2), 2);
+        Console.WriteLine($"Example 2: {SolveAddTwoNumbers(l1, l2)?.ToString()}");
         
         //Example 3
-        l1 = arrayToListNode(new[] {9, 9, 9, 9, 9, 9, 9});
-        l2 = arrayToListNode(new[] {9, 9, 9, 9});
-        printListNode(SolveAddTwoNumbers(l1, l2), 3);
+        l1 = ArrayToListNode(new[] {9, 9, 9, 9, 9, 9, 9});
+        l2 = ArrayToListNode(new[] {9, 9, 9, 9});
+        Console.WriteLine($"Example 3: {SolveAddTwoNumbers(l1, l2)?.ToString()}");
 
-        ListNode arrayToListNode(int[] arr)
+        ListNode ArrayToListNode(int[] arr)
         {
-            ListNode listNode = new ListNode();
+            ListNode listNode = new ListNode(0, null);
             ListNode rootNode = listNode;
             for (int i = 0; i < arr.Length; i++)
             {
-                listNode.val = arr[i];
-                listNode.next = new ListNode();
-                listNode = listNode.next;
+                listNode.Value = arr[i];
+                listNode.Next = new ListNode(0, null);
+                listNode = listNode.Next;
             }
 
             return rootNode;
         }
-            
-        void printListNode(ListNode listNode, int exampleNum)
-        {
-            List<int> result = new List<int>();
-            while (listNode.next != null)
-            {
-                result.Add(listNode.val);
-                listNode = listNode.next;
-            }
-            
-            Console.WriteLine($"Example {exampleNum}: [{String.Join(", ", result)}]");
-        }
-    }
-
-    private class ListNode 
-    {
-         public int val;
-         public ListNode next;
-         public ListNode(int val = 0, ListNode next = null) 
-         {
-             this.val = val;
-             this.next = next;
-         }
     }
 
     private ListNode SolveAddTwoNumbers(ListNode l1, ListNode l2)
@@ -66,13 +44,13 @@ public class AddTwoNumbers : BaseProblem
         string ListNodeValuesToString(ListNode listNode)
         {
             string result = "";
-            while (listNode.next != null)
+            while (listNode.Next != null)
             {
-                result += listNode.val.ToString();
-                listNode = listNode.next;
+                result += listNode.Value.ToString();
+                listNode = listNode.Next;
             }
 
-            return result + listNode.val.ToString();
+            return result + listNode.Value.ToString();
         }
 
         string ReverseString(string str)
@@ -92,9 +70,9 @@ public class AddTwoNumbers : BaseProblem
         ListNode rootNode = listNode;
         for (int i = 0; i < result.Length; i++)
         {
-            listNode.val = int.Parse(result[i].ToString());
-            listNode.next = new ListNode();
-            listNode = listNode.next;
+            listNode.Value = int.Parse(result[i].ToString());
+            listNode.Next = new ListNode(0, null);
+            listNode = listNode.Next;
             
             //Because of the way LeetCode handles their print function (hidden)
             // listNode.val = int.Parse(result[i].ToString());

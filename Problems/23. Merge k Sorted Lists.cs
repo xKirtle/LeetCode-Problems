@@ -15,15 +15,15 @@ public class MergeKSortedLists : BaseProblem
             new ListNode(1, new ListNode(3, new ListNode(4, null))),
             new ListNode(2, new ListNode(6, null))
         };
-        Console.WriteLine($"Example 1: {SolveMergeKSortedLists(lists).ToString()}");
+        Console.WriteLine($"Example 1: [{SolveMergeKSortedLists(lists)?.ToString()}]");
         
         //Example 2
         lists = new ListNode[0];
-        Console.WriteLine($"Example 2: {SolveMergeKSortedLists(lists).ToString()}");
+        Console.WriteLine($"Example 2: [{SolveMergeKSortedLists(lists)?.ToString()}]");
         
         //Example 3
         lists = new ListNode[1];
-        Console.WriteLine($"Example 3: {SolveMergeKSortedLists(lists).ToString()}");
+        Console.WriteLine($"Example 3: [{SolveMergeKSortedLists(lists)?.ToString()}]");
     }
 
     private ListNode SolveMergeKSortedLists(ListNode[] lists)
