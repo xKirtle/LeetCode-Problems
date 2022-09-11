@@ -22,18 +22,13 @@ public class RemoveDuplicatesFromSortedArray : BaseProblem
     private int RemoveDuplicates(int[] nums)
     {
         int count = 1;
-
-        if (nums.Length == 2 && nums[0] == nums[1])
-            return count;
-
+        
         for (int i = 1; i < nums.Length; i++)
         {
-            while (i < nums.Length && nums[i] == nums[i - 1]) i++;
-            
-            if (count < nums.Length && i < nums.Length)
-                nums[count++] = nums[i];
+            if (nums[i] == nums[i - 1]) count++;
+            else nums[i - count] = nums[i];
         }
         
-        return count;
+        return nums.Length - count;
     }
 }
